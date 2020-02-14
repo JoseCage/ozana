@@ -1,11 +1,11 @@
 <?php
 
-namespace WatchLater\Modules\WatchLists\Database\Migrations;
+namespace Modules\Links\Database\Migrations;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMoviesTable extends Migration
+class CreateLinksTable extends Migration
 {
     /**
      * @var \Illuminate\Database\Schema\Builder
@@ -27,21 +27,11 @@ class CreateMoviesTable extends Migration
      */
     public function up()
     {
-        $this->schema->create('movies', function (Blueprint $table) {
+        $this->schema->create('links', function (Blueprint $table) {
             $table->bigInteger('uid')->autoIncrement();
             $table->uuid('id')->unique();
-            $table->string('title');
-            $table->text('short_sinopse')->nullable();
-            $table->text('sinopse')->nullable();
-            $table->string('image')->nullable();
-            $table->date('release_date')->nullable();
-            $table->uuid('movie_type_id');
             $table->timestamps();
             $table->softDeletes();
-
-            $table->foreign('movie_type_id')
-                  ->references('id')
-                  ->on('movie_types');
         });
     }
 
@@ -52,6 +42,6 @@ class CreateMoviesTable extends Migration
      */
     public function down()
     {
-        $this->schema->drop('movies');
+        $this->schema->drop('links');
     }
 }
