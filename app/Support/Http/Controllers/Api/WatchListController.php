@@ -21,6 +21,10 @@ class WatchListController extends Controller
             $list = WatchList::orderBy($request->orderBy, $request->order)->paginate($request->per_page);
         }
 
+        if ($request->has('public')) {
+            $list = WatchList::where('public', $request->public)->orderBy($request->orderBy ?? 'id', $request->order ?? 'desc')->paginate($request->per_page);
+        }
+
         return response()->json($list);
     }
 
