@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use WatchLater\Support\Http\Controllers\Controller;
 use WatchLater\Modules\Links\Link;
+use WatchLater\Modules\WatchLists\WatchList;
 use WatchLater\Services\PublicLinkService;
 
 class LinkController extends Controller
@@ -30,6 +31,19 @@ class LinkController extends Controller
         //         'data' => $link
         //     ]);
         // }
+    }
+
+    public function redirectToList(Request $request)
+    {
+        $url = $request->fullUrl();
+
+        $sharedLink = Link::where('url', $url)->first();
+
+        $list = WatchList::find($sharedLink->watchlist_id);
+
+        //dd($list);
+
+        return redirect(config('app.url') . '/api/watchlists/' . $list->id);
     }
 
 }

@@ -49,7 +49,7 @@ class PublicLinkService
         $publiclink = Link::create(
             [
             'public' => $public ?? false,
-            'url' => config('app.url') . '/link?share=' . str_random(25),//$list->id,
+            'url' => config('app.url') . '/api' . '/' . 'share/' . str_random(25),//$list->id,
             'watchlist_id' => $list->id
             ]
         );

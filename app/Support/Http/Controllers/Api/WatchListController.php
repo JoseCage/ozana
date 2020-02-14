@@ -47,4 +47,27 @@ class WatchListController extends Controller
         ]);
     }
 
+    public function publicWatchLists(Request $request)
+    {
+        $list = WatchList::paginate($request->per_page);
+
+        if ($request->has('orderBy')) {
+            $list = WatchList::orderBy($request->orderBy, $request->order)->paginate($request->per_page);
+        }
+
+        return response()->json($list);
+    }
+
+    public function publicWatchList($watchlist)
+    {
+
+        $list = WatchList::with('movies')->findOrFail($watchlist);
+
+        return response()->json([
+            'data' => [
+                $list
+            ]
+        ]);
+    }
+
 }
