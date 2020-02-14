@@ -171,6 +171,7 @@ return [
          */
          WatchLater\Modules\Users\Providers\UserServiceProvider::class,
          WatchLater\Modules\WatchLists\Providers\WatchListServiceProvider::class,
+         WatchLater\Modules\Links\Providers\LinkServiceProvider::class,
 
         /*
          * Application Service Providers...

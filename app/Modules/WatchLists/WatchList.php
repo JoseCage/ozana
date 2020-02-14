@@ -32,8 +32,7 @@ class WatchList extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'decription',
-       'channel_id', 'user_id'
+        'name', 'decription', 'user_id'
     ];
 
     // protected $with = [

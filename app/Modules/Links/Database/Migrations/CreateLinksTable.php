@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Links\Database\Migrations;
+namespace WatchLater\Modules\Links\Database\Migrations;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -30,8 +30,15 @@ class CreateLinksTable extends Migration
         $this->schema->create('links', function (Blueprint $table) {
             $table->bigInteger('uid')->autoIncrement();
             $table->uuid('id')->unique();
+            $table->string('url');
+            $table->boolean('public')->default(false);
+            $table->uuid('watchlist_id');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->foreign('watchlist_id')
+                  ->references('id')
+                  ->on('watchlists');
         });
     }
 

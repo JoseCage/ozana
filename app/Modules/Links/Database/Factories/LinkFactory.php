@@ -1,15 +1,15 @@
 <?php
 
-namespace WatchLater\Modules\WatchLists\Database\Factories;
+namespace WatchLater\Modules\Links\Database\Factories;
 
 use WatchLater\Support\Database\ModelFactory;
 
+use WatchLater\Modules\Links\Link;
 use WatchLater\Modules\WatchLists\WatchList;
-use WatchLater\Modules\Users\User;
 
 /*
 |--------------------------------------------------------------------------
-| User Model Factory
+| Link Model Factory
 |--------------------------------------------------------------------------
 |
 | This directory should contain each of the model factory definitions for
@@ -17,18 +17,18 @@ use WatchLater\Modules\Users\User;
 | model instances for testing / seeding your application's database.
 |
 */
-class WatchListFactory extends ModelFactory
+class LinkFactory extends ModelFactory
 {
-    protected $model = WatchList::class;
+    protected $model = Link::class;
 
     protected function fields()
     {
-        static $password;
 
         return [
             'id' => $this->faker->uuid,
-            'name' => $this->faker->text(15),
-            'user_id' => factory(User::class)->create()->id
+            'url' => $this->faker->url,
+            'public' => array_random([true, false]),
+            'watchlist_id' => factory(WatchList::class)->create()->id
         ];
     }
 }

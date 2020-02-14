@@ -5,6 +5,10 @@ namespace WatchLater\Modules\Links\Providers;
 use Illuminate\Support\ServiceProvider;
 use Migrator\MigratorTrait as LaravelMigrator;
 
+use WatchLater\Modules\Links\Database\Migrations\CreateLinksTable;
+
+use WatchLater\Modules\Links\Database\Factories\LinkFactory;
+
 class LinkServiceProvider extends ServiceProvider
 {
     use LaravelMigrator;
@@ -20,14 +24,14 @@ class LinkServiceProvider extends ServiceProvider
     {
         $this->migrations(
             [
-                //
+                CreateLinksTable::class
             ]
         );
     }
 
     public function registerFactories()
     {
-         (new ClassFactory())->define();
+         (new LinkFactory())->define();
     }
 
     public function registerSeeders()
