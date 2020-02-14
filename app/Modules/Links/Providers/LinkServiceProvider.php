@@ -37,8 +37,10 @@ class LinkServiceProvider extends ServiceProvider
 
     public function registerSeeders()
     {
-        $this->seeders([
+        $this->seeders(
+            [
             LinksTableSeeder::class
-        ]);
+            ]
+        );
     }
 }

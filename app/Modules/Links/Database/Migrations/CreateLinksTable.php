@@ -15,10 +15,10 @@ class CreateLinksTable extends Migration
     /**
      * Migration constructor.
      */
-     public function __construct()
-     {
-         $this->schema = app('db')->connection()->getSchemaBuilder();
-     }
+    public function __construct()
+    {
+        $this->schema = app('db')->connection()->getSchemaBuilder();
+    }
 
     /**
      * Run the migrations.
@@ -27,19 +27,21 @@ class CreateLinksTable extends Migration
      */
     public function up()
     {
-        $this->schema->create('links', function (Blueprint $table) {
-            $table->bigInteger('uid')->autoIncrement();
-            $table->uuid('id')->unique();
-            $table->string('url');
-            $table->boolean('public')->default(false);
-            $table->uuid('watchlist_id');
-            $table->timestamps();
-            $table->softDeletes();
+        $this->schema->create(
+            'links', function (Blueprint $table) {
+                $table->bigInteger('uid')->autoIncrement();
+                $table->uuid('id')->unique();
+                $table->string('url')->unique();
+                $table->boolean('public')->default(false);
+                $table->uuid('watchlist_id');
+                $table->timestamps();
+                $table->softDeletes();
 
-            $table->foreign('watchlist_id')
-                  ->references('id')
-                  ->on('watchlists');
-        });
+                $table->foreign('watchlist_id')
+                    ->references('id')
+                    ->on('watchlists');
+            }
+        );
     }
 
     /**

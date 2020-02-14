@@ -26,6 +26,7 @@ class Api extends Router
         $this->userWatchListRoutes();
         $this->movieRoutes();
         $this->movieTypeRoutes();
+        $this->userLinksRoutes();
     }
 
     protected function channelsRoutes()
@@ -61,6 +62,19 @@ class Api extends Router
             $watchlist->get('/', 'WatchListController@myList')->name('watchlists');
             $watchlist->get('/{watchlist}', 'WatchListController@watchList')->name('watchlists.find');
             $watchlist->post('/', 'WatchListController@addToList')->name('watchlists.add');
+        });
+    }
+
+    /**
+     * User WatchList links routes
+     *
+     * @return void
+     */
+    protected function userLinksRoutes()
+    {
+        $this->router->group(['prefix' => 'me/links'/*, 'middleware' => 'auth.jwt'*/, 'namespace' => '\WatchLater\Support\Http\Controllers\Api'], function($watchlist){
+            $watchlist->get('/', 'LinkController@index')->name('links');
+            $watchlist->post('/share/{watchlist}', 'LinkController@generateLink')->name('links.add');
         });
     }
 

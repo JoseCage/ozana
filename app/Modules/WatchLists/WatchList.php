@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use WatchLater\Traits\UuidTrait as Uuids;
 use WatchLater\Modules\Users\User;
+use WatchLater\Modules\Links\Link;
 
 class WatchList extends Model
 {
@@ -69,6 +70,11 @@ class WatchList extends Model
     public function movies()
     {
         return $this->belongsToMany(Movie::class)->orderBy('release_date', 'asc');
+    }
+
+    public function links()
+    {
+        return $this->hasMany(Link::class, 'watchlist_id');
     }
 
 }
