@@ -28,7 +28,9 @@ class PublicLinkService
             );
         }
 
-        $link = Link::where('watchlist_id', $watchlist)->where('public', true)->first();
+        $link = Link::where('watchlist_id', $watchlist)->first();
+
+        $isPublic = $list->public === true;
 
         //dd($link);
 
@@ -46,15 +48,30 @@ class PublicLinkService
 
         }
 
-        $publiclink = Link::create(
-            [
-            'public' => $public ?? false,
-            'url' => config('app.url') . '/api' . '/' . 'share/' . str_random(25),//$list->id,
-            'watchlist_id' => $list->id
-            ]
-        );
+        if ($isPublic) {
+            $publiclink = Link::create(
+                [
+                //'public' => $public ?? false,
+                'url' => config('app.url') . '/api' . '/' . 'share/' . str_random(25),//$list->id,
+                'watchlist_id' => $list->id
+                ]
+            );
 
-        return $publiclink;
+            return response()->json([
+                'data' => [
+                    $publiclink
+                ]
+            ]);
+        }
+
+        return response()->json(
+            [
+            'data' => [
+                'status_code' => '403',
+                'message' => 'This list is not public. You cant share!'
+            ]
+            ], 403
+        );
 
     }
 

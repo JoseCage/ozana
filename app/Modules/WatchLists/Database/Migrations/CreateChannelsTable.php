@@ -15,10 +15,10 @@ class CreateChannelsTable extends Migration
     /**
      * Migration constructor.
      */
-     public function __construct()
-     {
-         $this->schema = app('db')->connection()->getSchemaBuilder();
-     }
+    public function __construct()
+    {
+        $this->schema = app('db')->connection()->getSchemaBuilder();
+    }
 
     /**
      * Run the migrations.
@@ -27,14 +27,16 @@ class CreateChannelsTable extends Migration
      */
     public function up()
     {
-        $this->schema->create('channels', function (Blueprint $table) {
-            $table->bigInteger('uid')->autoIncrement();
-            $table->uuid('id')->unique();
-            $table->string('name');
-            $table->string('icon')->nullable();
-            $table->timestamps();
-            $table->softDeletes();
-        });
+        $this->schema->create(
+            'channels', function (Blueprint $table) {
+                $table->bigInteger('uid')->autoIncrement();
+                $table->uuid('id')->unique();
+                $table->string('name');
+                $table->string('icon')->nullable();
+                $table->timestamps();
+                $table->softDeletes();
+            }
+        );
     }
 
     /**

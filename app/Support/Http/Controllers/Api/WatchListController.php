@@ -49,10 +49,10 @@ class WatchListController extends Controller
 
     public function publicWatchLists(Request $request)
     {
-        $list = WatchList::paginate($request->per_page);
+        $list = WatchList::where('public', true)->paginate($request->per_page);
 
         if ($request->has('orderBy')) {
-            $list = WatchList::orderBy($request->orderBy, $request->order)->paginate($request->per_page);
+            $list = WatchList::where('public', true)->orderBy($request->orderBy, $request->order)->paginate($request->per_page);
         }
 
         return response()->json($list);

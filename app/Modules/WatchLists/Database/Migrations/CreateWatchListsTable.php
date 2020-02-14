@@ -15,10 +15,10 @@ class CreateWatchListsTable extends Migration
     /**
      * Migration constructor.
      */
-     public function __construct()
-     {
-         $this->schema = app('db')->connection()->getSchemaBuilder();
-     }
+    public function __construct()
+    {
+        $this->schema = app('db')->connection()->getSchemaBuilder();
+    }
 
     /**
      * Run the migrations.
@@ -27,19 +27,22 @@ class CreateWatchListsTable extends Migration
      */
     public function up()
     {
-        $this->schema->create('watchlists', function (Blueprint $table) {
-            $table->bigInteger('uid')->autoIncrement();
-            $table->uuid('id')->unique();
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->uuid('user_id');
-            $table->timestamps();
-            $table->softDeletes();
+        $this->schema->create(
+            'watchlists', function (Blueprint $table) {
+                $table->bigInteger('uid')->autoIncrement();
+                $table->uuid('id')->unique();
+                $table->string('name');
+                $table->text('description')->nullable();
+                $table->uuid('user_id');
+                $table->boolean('public')->default(false);
+                $table->timestamps();
+                $table->softDeletes();
 
-            $table->foreign('user_id')
-                  ->references('id')
-                  ->on('users');
-        });
+                $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users');
+            }
+        );
     }
 
     /**

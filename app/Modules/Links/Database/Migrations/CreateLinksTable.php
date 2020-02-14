@@ -32,7 +32,6 @@ class CreateLinksTable extends Migration
                 $table->bigInteger('uid')->autoIncrement();
                 $table->uuid('id')->unique();
                 $table->string('url')->unique();
-                $table->boolean('public')->default(false);
                 $table->uuid('watchlist_id');
                 $table->timestamps();
                 $table->softDeletes();

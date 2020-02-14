@@ -28,7 +28,8 @@ class WatchListFactory extends ModelFactory
         return [
             'id' => $this->faker->uuid,
             'name' => $this->faker->text(15),
-            'user_id' => factory(User::class)->create()->id
+            'user_id' => factory(User::class)->create()->id,
+            'public' => array_random([true, false])
         ];
     }
 }

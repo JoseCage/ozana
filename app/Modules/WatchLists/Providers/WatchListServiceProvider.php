@@ -43,8 +43,10 @@ class WatchListServiceProvider extends ServiceProvider
 
     public function registerSeeders()
     {
-        $this->seeders([
+        $this->seeders(
+            [
             WatchListsTableSeeder::class
-        ]);
+            ]
+        );
     }
 }

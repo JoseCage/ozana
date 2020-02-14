@@ -18,13 +18,13 @@ class WatchList extends Model
      * Disable auto-incrementing the primary key field for this model.
      *
      * @var bool $incrementing
-    */
+     */
     public $incrementing = false;
     /**
      * Override the primary key type.
      *
      * @var string keyType
-    */
+     */
     protected $keyType = 'string';
 
     /**
@@ -38,6 +38,10 @@ class WatchList extends Model
 
     protected $with = [
         'movies'
+    ];
+
+    protected $casts = [
+        'public' => 'boolean'
     ];
 
     /**

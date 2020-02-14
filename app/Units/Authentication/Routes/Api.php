@@ -75,7 +75,7 @@ class Api extends Router
     {
         $this->router->group([/*'prefix' => 'links', 'middleware' => 'auth.jwt'*/ 'namespace' => '\WatchLater\Support\Http\Controllers\Api'], function($watchlist){
             $watchlist->get('/watchlists', 'WatchListController@publicWatchLists')->name('watchlists');
-            $watchlist->get('/share/{link}', 'LinkController@redirectToList')->name('watchlists.redirect');
+            //$watchlist->get('/share/{link}', 'LinkController@redirectToList')->name('watchlists.redirect');
             $watchlist->get('/watchlists/{watchlist}', 'WatchListController@publicWatchList')->name('watchlists.find');
         });
     }

@@ -14,13 +14,13 @@ class Movie extends Model
      * Disable auto-incrementing the primary key field for this model.
      *
      * @var bool $incrementing
-    */
+     */
     public $incrementing = false;
     /**
      * Override the primary key type.
      *
      * @var string keyType
-    */
+     */
     protected $keyType = 'string';
 
     /**
@@ -32,6 +32,10 @@ class Movie extends Model
         'title', 'image', 'release_date', 'movie_type_id'
     ];
 
+    protected $with = [
+        'movietype'
+    ];
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -39,7 +43,8 @@ class Movie extends Model
      */
     protected $hidden = [
         'deleted_at',
-        'uid'
+        'uid',
+        'movie_type_id'
     ];
 
     protected $dates = [];
