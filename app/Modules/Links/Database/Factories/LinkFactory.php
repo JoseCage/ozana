@@ -26,7 +26,7 @@ class LinkFactory extends ModelFactory
 
         return [
             'id' => $this->faker->uuid,
-            'url' => $this->faker->url,
+            'url' => 'https://watchitlater.tv/share?list_url=' . str_random('50'),
             'public' => array_random([true, false]),
             'watchlist_id' => factory(WatchList::class)->create()->id
         ];

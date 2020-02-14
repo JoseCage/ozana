@@ -35,9 +35,9 @@ class WatchList extends Model
         'name', 'decription', 'user_id'
     ];
 
-    // protected $with = [
-    //     'movies'
-    // ];
+    protected $with = [
+        'movies'
+    ];
 
     /**
      * The attributes that should be hidden for arrays.

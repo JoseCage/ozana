@@ -8,6 +8,7 @@ use Migrator\MigratorTrait as LaravelMigrator;
 use WatchLater\Modules\Links\Database\Migrations\CreateLinksTable;
 
 use WatchLater\Modules\Links\Database\Factories\LinkFactory;
+use WatchLater\Modules\Links\Database\Seeders\LinksTableSeeder;
 
 class LinkServiceProvider extends ServiceProvider
 {
@@ -37,7 +38,7 @@ class LinkServiceProvider extends ServiceProvider
     public function registerSeeders()
     {
         $this->seeders([
-            //
+            LinksTableSeeder::class
         ]);
     }
 }
