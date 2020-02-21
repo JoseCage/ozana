@@ -7,11 +7,14 @@ use Illuminate\Http\Request;
 use WatchLater\Support\Http\Controllers\Controller;
 use WatchLater\Modules\WatchLists\WatchList;
 use Illuminate\Support\Facades\Auth;
+use Tymon\JWTAuth\JWTAuth;
 
 class WatchListController extends Controller
 {
     public function myList(Request $request)
     {
+        //$user = JWTAuth::parseToken()->authenticate();
+
         $list = WatchList::paginate($request->per_page);
 
         if ($request->has('orderBy')) {
@@ -23,7 +26,7 @@ class WatchListController extends Controller
 
     public function watchList($watchlist)
     {
-        $list = WatchList::with('movies')->find($watchlist);
+        $list = WatchList::with('movies')->findOrFail($watchlist);
 
         return response()->json($list);
     }
