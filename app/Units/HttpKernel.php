@@ -62,6 +62,7 @@ class HttpKernel extends Kernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'auth.jwt' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
         'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
+        'cors'  => \WatchLater\Units\Core\Http\Middleware\Cors::class,
     ];
 
     /**

@@ -47,6 +47,8 @@ class Movie extends Model
         'movie_type_id'
     ];
 
+    protected $casts = [];
+
     protected $dates = [];
 
     public function watchlists()

@@ -47,7 +47,7 @@ class Api extends Router
 
     protected function movieRoutes()
     {
-        $this->router->group(['prefix' => 'movies', 'namespace' => '\WatchLater\Support\Http\Controllers\Api'], function($movietype){
+        $this->router->group(['prefix' => 'movies', 'middleware' => 'cors', 'namespace' => '\WatchLater\Support\Http\Controllers\Api'], function($movietype){
             $movietype->get('/', 'MovieController@index')->name('movies');
         });
     }
@@ -59,7 +59,7 @@ class Api extends Router
      */
     protected function userWatchListRoutes()
     {
-        $this->router->group(['prefix' => 'me/watchlists'/*, 'middleware' => 'auth.jwt'*/, 'namespace' => '\WatchLater\Support\Http\Controllers\Api'], function($watchlist){
+        $this->router->group(['prefix' => 'me/watchlists', 'middleware' => 'cors', 'namespace' => '\WatchLater\Support\Http\Controllers\Api'], function($watchlist){
             $watchlist->get('/', 'WatchListController@myList')->name('user.watchlists');
             $watchlist->get('/{watchlist}', 'WatchListController@watchList')->name('user.watchlists.find');
             $watchlist->post('/', 'WatchListController@addToList')->name('user.watchlists.add');
