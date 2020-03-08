@@ -1,14 +1,14 @@
 <?php
 
-namespace WatchLater\Modules\Links\Providers;
+namespace Ozana\Modules\Links\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Migrator\MigratorTrait as LaravelMigrator;
 
-use WatchLater\Modules\Links\Database\Migrations\CreateLinksTable;
+use Ozana\Modules\Links\Database\Migrations\CreateLinksTable;
 
-use WatchLater\Modules\Links\Database\Factories\LinkFactory;
-use WatchLater\Modules\Links\Database\Seeders\LinksTableSeeder;
+use Ozana\Modules\Links\Database\Factories\LinkFactory;
+use Ozana\Modules\Links\Database\Seeders\LinksTableSeeder;
 
 class LinkServiceProvider extends ServiceProvider
 {

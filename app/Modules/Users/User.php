@@ -1,15 +1,15 @@
 <?php
 
-namespace WatchLater\Modules\Users;
+namespace Ozana\Modules\Users;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-use WatchLater\Traits\UuidTrait;
-use WatchLater\Modules\Events\Event;
-use WatchLater\Modules\WatchLists\WatchList;
-use WatchLater\Modules\WatchLists\MovieWatchList;
+use Ozana\Traits\UuidTrait;
+use Ozana\Modules\Events\Event;
+use Ozana\Modules\WatchLists\WatchList;
+use Ozana\Modules\WatchLists\MovieWatchList;
 
 /**
 * User class

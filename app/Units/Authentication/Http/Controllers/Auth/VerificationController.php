@@ -1,8 +1,8 @@
 <?php
 
-namespace WatchLater\Units\Authentication\Http\Controllers\Auth;
+namespace Ozana\Units\Authentication\Http\Controllers\Auth;
 
-use WatchLater\Http\Controllers\Controller;
+use Ozana\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
 class VerificationController extends Controller

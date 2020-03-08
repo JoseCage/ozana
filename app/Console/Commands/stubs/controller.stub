@@ -4,7 +4,7 @@ namespace DummyNamespace;
 
 use Illuminate\Http\Request;
 
-use WatchLater\Support\Http\Controllers\Controller;
+use Ozana\Support\Http\Controllers\Controller;
 
 class DummyClass extends Controller
 {

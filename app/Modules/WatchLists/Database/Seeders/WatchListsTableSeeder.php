@@ -1,9 +1,9 @@
 <?php
 
-namespace WatchLater\Modules\Users\Database\Seeders;
+namespace Ozana\Modules\Users\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use WatchLater\Modules\WatchLists\WatchList;
+use Ozana\Modules\WatchLists\WatchList;
 
 class WatchListsTableSeeder extends Seeder
 {

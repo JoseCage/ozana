@@ -1,11 +1,11 @@
 <?php
 
-namespace WatchLater\Modules\WatchLists\Database\Factories;
+namespace Ozana\Modules\WatchLists\Database\Factories;
 
-use WatchLater\Support\Database\ModelFactory;
+use Ozana\Support\Database\ModelFactory;
 
-use WatchLater\Modules\WatchLists\WatchList;
-use WatchLater\Modules\Users\User;
+use Ozana\Modules\WatchLists\WatchList;
+use Ozana\Modules\Users\User;
 
 /*
 |--------------------------------------------------------------------------

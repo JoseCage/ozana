@@ -1,10 +1,10 @@
 <?php
 
-namespace WatchLater\Services;
+namespace Ozana\Services;
 
-use WatchLater\Modules\WatchLists\WatchList;
-use WatchLater\Modules\Users\User;
-use WatchLater\Modules\Links\Link;
+use Ozana\Modules\WatchLists\WatchList;
+use Ozana\Modules\Users\User;
+use Ozana\Modules\Links\Link;
 
 class PublicLinkService
 {

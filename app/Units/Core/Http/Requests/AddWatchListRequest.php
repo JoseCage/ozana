@@ -1,6 +1,6 @@
 <?php
 
-namespace WatchLater\Units\Core\Http\Requests;
+namespace Ozana\Units\Core\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

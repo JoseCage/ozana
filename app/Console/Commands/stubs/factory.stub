@@ -2,9 +2,9 @@
 
 namespace DummyNamespace;
 
-use WatchLater\Support\Database\ModelFactory;
+use Ozana\Support\Database\ModelFactory;
 
-use WatchLater\Modules\DummyClasss\DummyClass;
+use Ozana\Modules\DummyClasss\DummyClass;
 
 /*
 |--------------------------------------------------------------------------

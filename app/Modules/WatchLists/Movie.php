@@ -1,10 +1,10 @@
 <?php
 
-namespace WatchLater\Modules\WatchLists;
+namespace Ozana\Modules\WatchLists;
 
 use Illuminate\Database\Eloquent\Model;
 
-use WatchLater\Traits\UuidTrait as Uuids;
+use Ozana\Traits\UuidTrait as Uuids;
 
 class Movie extends Model
 {

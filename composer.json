@@ -1,5 +1,5 @@
 {
-    "name": "linkasoftwares/watchlater",
+    "name": "linkasoftwares/Ozana",
     "type": "project",
     "description": "A easy way to remind wich movies and series you want to watch and when",
     "keywords": [
@@ -14,8 +14,7 @@
         "laravel/framework": "5.8.*",
         "laravel/socialite": "^4.1",
         "laravel/tinker": "^1.0",
-        "ramsey/uuid": "^3.8",
-        "tymon/jwt-auth": "^0.5.12"
+        "ramsey/uuid": "^3.8"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -37,7 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "WatchLater\\": "app/"
+            "Ozana\\": "app/"
         },
         "classmap": [
             "database/seeds"

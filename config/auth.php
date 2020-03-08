@@ -68,7 +68,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => WatchLater\Modules\Users\User::class,
+            'model' => Ozana\Modules\Users\User::class,
         ],
 
         // 'users' => [

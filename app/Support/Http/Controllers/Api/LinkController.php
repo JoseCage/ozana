@@ -1,13 +1,13 @@
 <?php
 
-namespace WatchLater\Support\Http\Controllers\Api;
+namespace Ozana\Support\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 
-use WatchLater\Support\Http\Controllers\Controller;
-use WatchLater\Modules\Links\Link;
-use WatchLater\Modules\WatchLists\WatchList;
-use WatchLater\Services\PublicLinkService;
+use Ozana\Support\Http\Controllers\Controller;
+use Ozana\Modules\Links\Link;
+use Ozana\Modules\WatchLists\WatchList;
+use Ozana\Services\PublicLinkService;
 
 class LinkController extends Controller
 {

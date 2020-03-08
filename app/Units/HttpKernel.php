@@ -1,6 +1,6 @@
 <?php
 
-namespace WatchLater\Units;
+namespace Ozana\Units;
 
 use Illuminate\Foundation\Http\Kernel;
 
@@ -14,11 +14,11 @@ class HttpKernel extends Kernel
      * @var array
      */
     protected $middleware = [
-        \WatchLater\Units\Core\Http\Middleware\CheckForMaintenanceMode::class,
+        \Ozana\Units\Core\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
-        \WatchLater\Units\Core\Http\Middleware\TrimStrings::class,
+        \Ozana\Units\Core\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        \WatchLater\Units\Core\Http\Middleware\TrustProxies::class,
+        \Ozana\Units\Core\Http\Middleware\TrustProxies::class,
     ];
 
     /**
@@ -28,12 +28,12 @@ class HttpKernel extends Kernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \WatchLater\Units\Core\Http\Middleware\EncryptCookies::class,
+            \Ozana\Units\Core\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \WatchLater\Units\Core\Http\Middleware\VerifyCsrfToken::class,
+            \Ozana\Units\Core\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
@@ -51,18 +51,18 @@ class HttpKernel extends Kernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \WatchLater\Units\Core\Http\Middleware\Authenticate::class,
+        'auth' => \Ozana\Units\Core\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \WatchLater\Units\Core\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \Ozana\Units\Core\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'auth.jwt' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
         'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
-        'cors'  => \WatchLater\Units\Core\Http\Middleware\Cors::class,
+        'cors'  => \Ozana\Units\Core\Http\Middleware\Cors::class,
     ];
 
     /**
@@ -75,7 +75,7 @@ class HttpKernel extends Kernel
     protected $middlewarePriority = [
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \WatchLater\Units\Core\Http\Middleware\Authenticate::class,
+        \Ozana\Units\Core\Http\Middleware\Authenticate::class,
         \Illuminate\Session\Middleware\AuthenticateSession::class,
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,

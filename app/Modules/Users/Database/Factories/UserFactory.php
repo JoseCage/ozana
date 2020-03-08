@@ -1,10 +1,10 @@
 <?php
 
-namespace WatchLater\Modules\Users\Database\Factories;
+namespace Ozana\Modules\Users\Database\Factories;
 
-use WatchLater\Support\Database\ModelFactory;
+use Ozana\Support\Database\ModelFactory;
 
-use WatchLater\Modules\Users\User;
+use Ozana\Modules\Users\User;
 
 /*
 |--------------------------------------------------------------------------

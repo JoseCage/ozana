@@ -1,6 +1,6 @@
 <?php
 
-namespace WatchLater\Console\Commands;
+namespace Ozana\Console\Commands;
 
 use Illuminate\Foundation\Console\ProviderMakeCommand;
 

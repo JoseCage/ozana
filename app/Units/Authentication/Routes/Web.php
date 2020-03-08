@@ -1,15 +1,15 @@
 <?php
 
-namespace WatchLater\Units\Authentication\Routes;
+namespace Ozana\Units\Authentication\Routes;
 
-use WatchLater\Support\Http\Routing\Router;
+use Ozana\Support\Http\Routing\Router;
 
 /**
  * Web routes classS
  *
  * @category Web
  *
- * @package WatchLater
+ * @package Ozana
  *
  * @author José Cage <jose.cage@linkasoftwares.com>
  *
@@ -29,7 +29,7 @@ class Web extends Router
 
     protected function homeRoutes()
     {
-        $this->router->get('me', '\WatchLater\Support\Http\Controllers\HomeController@homeAdmin')->name('admin');
+        $this->router->get('me', '\Ozana\Support\Http\Controllers\HomeController@homeAdmin')->name('admin');
 
         $this->router->get('/', function () {
             return view('welcome');
@@ -41,8 +41,8 @@ class Web extends Router
         });*/
 
         $this->router->get('/render', function(){
-            $user = \WatchLater\Modules\Users\User::first();
-            return (new \WatchLater\Mail\WelcomeUser($user))->render();
+            $user = \Ozana\Modules\Users\User::first();
+            return (new \Ozana\Mail\WelcomeUser($user))->render();
         });
 
     }
@@ -54,7 +54,7 @@ class Web extends Router
      */
     protected function userWatchListRoutes()
     {
-        $this->router->group(['prefix' => 'me/watchlists', 'middleware' => 'auth', 'namespace' => '\WatchLater\Support\Http\Controllers'], function($watchlist){
+        $this->router->group(['prefix' => 'me/watchlists', 'middleware' => 'auth', 'namespace' => '\Ozana\Support\Http\Controllers'], function($watchlist){
             $watchlist->get('/', 'WatchListController@myList')->name('watchlists');
             $watchlist->post('/', 'WatchListController@addToList')->name('watchlists.add');
         });
@@ -62,7 +62,7 @@ class Web extends Router
 
     protected function userMovieListRoutes()
     {
-        $this->router->group(['prefix' => 'me/lists', 'middleware' => 'auth', 'namespace' => '\WatchLater\Support\Http\Controllers'], function($watchlist){
+        $this->router->group(['prefix' => 'me/lists', 'middleware' => 'auth', 'namespace' => '\Ozana\Support\Http\Controllers'], function($watchlist){
             $watchlist->get('/', 'MovieListController@index')->name('movielists');
             $watchlist->post('/', 'MovieListController@addToMovieList')->name('movielists.add');
         });
@@ -71,7 +71,7 @@ class Web extends Router
     protected function authRoutes()
     {
 
-        $this->router->group(['prefix' => 'auth', 'namespace' => '\WatchLater\Units\Authentication\Http\Controllers'], function(){
+        $this->router->group(['prefix' => 'auth', 'namespace' => '\Ozana\Units\Authentication\Http\Controllers'], function(){
             // Social Auth
             $this->router->get('/social/{driver}', 'Auth\SocialAuthController@redirectToProvider')->name('social.oauth');
             $this->router->get('/social/{driver}/callback', 'Auth\SocialAuthController@handleProviderCallback')->name('social.callback');

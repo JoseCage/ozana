@@ -1,14 +1,14 @@
 <?php
 
-namespace WatchLater\Units\Authentication\Http\Controllers\Auth;
+namespace Ozana\Units\Authentication\Http\Controllers\Auth;
 
-use WatchLater\Support\Http\Controllers\Controller;
+use Ozana\Support\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-use WatchLater\Modules\Users\User;
+use Ozana\Modules\Users\User;
 
 class RegisterController extends Controller
 {
@@ -61,7 +61,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \WatchLater\User
+     * @return \Ozana\User
      */
     protected function create(array $data)
     {

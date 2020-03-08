@@ -1,11 +1,11 @@
 <?php
 
-namespace WatchLater\Modules\Links\Database\Factories;
+namespace Ozana\Modules\Links\Database\Factories;
 
-use WatchLater\Support\Database\ModelFactory;
+use Ozana\Support\Database\ModelFactory;
 
-use WatchLater\Modules\Links\Link;
-use WatchLater\Modules\WatchLists\WatchList;
+use Ozana\Modules\Links\Link;
+use Ozana\Modules\WatchLists\WatchList;
 
 /*
 |--------------------------------------------------------------------------

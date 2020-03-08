@@ -1,14 +1,14 @@
 <?php
 
-namespace WatchLater\Units\Authentication\Http\Controllers\Auth;
+namespace Ozana\Units\Authentication\Http\Controllers\Auth;
 
-use WatchLater\Support\Http\Controllers\Controller;
+use Ozana\Support\Http\Controllers\Controller;
 
 use Exception;
 use Illuminate\Support\Facades\Auth;
 
 use Socialite;
-use WatchLater\Modules\Users\User;
+use Ozana\Modules\Users\User;
 
 class SocialAuthController extends Controller
 {

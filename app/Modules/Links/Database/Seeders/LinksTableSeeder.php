@@ -1,10 +1,10 @@
 <?php
 
-namespace WatchLater\Modules\Links\Database\Seeders;
+namespace Ozana\Modules\Links\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use WatchLater\Modules\Links\Link;
+use Ozana\Modules\Links\Link;
 
 class LinksTableSeeder extends Seeder
 {

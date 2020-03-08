@@ -1,10 +1,10 @@
 <?php
 
-namespace WatchLater\Modules\Users\Database\Seeders;
+namespace Ozana\Modules\Users\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use WatchLater\Modules\Users\User;
+use Ozana\Modules\Users\User;
 
 class UsersTableSeeder extends Seeder
 {

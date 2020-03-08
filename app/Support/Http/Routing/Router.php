@@ -1,6 +1,6 @@
 <?php
 
-namespace WatchLater\Support\Http\Routing;
+namespace Ozana\Support\Http\Routing;
 
 /**
 * Class Router

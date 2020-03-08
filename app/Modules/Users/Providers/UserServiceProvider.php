@@ -1,14 +1,14 @@
 <?php
 
-namespace WatchLater\Modules\Users\Providers;
+namespace Ozana\Modules\Users\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Migrator\MigratorTrait as LaravelMigrator;
 
-use WatchLater\Modules\Users\Database\Migrations\CreateUsersTable;
-use WatchLater\Modules\Users\Database\Migrations\CreatePasswordResetsTable;
-use WatchLater\Modules\Users\Database\Seeders\UsersTableSeeder;
-use WatchLater\Modules\Users\Database\Factories\UserFactory;
+use Ozana\Modules\Users\Database\Migrations\CreateUsersTable;
+use Ozana\Modules\Users\Database\Migrations\CreatePasswordResetsTable;
+use Ozana\Modules\Users\Database\Seeders\UsersTableSeeder;
+use Ozana\Modules\Users\Database\Factories\UserFactory;
 
 class UserServiceProvider extends ServiceProvider
 {

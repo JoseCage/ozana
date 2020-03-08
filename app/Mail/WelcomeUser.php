@@ -1,12 +1,12 @@
 <?php
 
-namespace WatchLater\Mail;
+namespace Ozana\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use WatchLater\Modules\Users\User;
+use Ozana\Modules\Users\User;
 
 class WelcomeUser extends Mailable
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace WatchLater\Support\Http\Controllers\Api;
+namespace Ozana\Support\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 
-use WatchLater\Support\Http\Controllers\Controller;
-use WatchLater\Modules\WatchLists\Channel;
+use Ozana\Support\Http\Controllers\Controller;
+use Ozana\Modules\WatchLists\Channel;
 
 class ChannelController extends Controller
 {

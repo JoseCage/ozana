@@ -1,11 +1,11 @@
 <?php
 
-namespace WatchLater\Support\Http\Controllers;
+namespace Ozana\Support\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use WatchLater\Support\Http\Controllers\Controller;
-use WatchLater\Modules\WatchLists\MovieWatchList;
+use Ozana\Support\Http\Controllers\Controller;
+use Ozana\Modules\WatchLists\MovieWatchList;
 
 class MovieListController extends Controller
 {

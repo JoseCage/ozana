@@ -1,8 +1,8 @@
 <?php
 
-namespace WatchLater\Units\Authentication\Http\Controllers\Auth;
+namespace Ozana\Units\Authentication\Http\Controllers\Auth;
 
-use WatchLater\Support\Http\Controllers\Controller;
+use Ozana\Support\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller

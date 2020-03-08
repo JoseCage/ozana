@@ -1,6 +1,6 @@
 <?php
 
-namespace WatchLater\Services;
+namespace Ozana\Services;
 
 class SMSService
 {

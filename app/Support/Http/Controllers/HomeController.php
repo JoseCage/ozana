@@ -1,6 +1,6 @@
 <?php
 
-namespace WatchLater\Support\Http\Controllers;
+namespace Ozana\Support\Http\Controllers;
 
 use Illuminate\Http\Request;
 

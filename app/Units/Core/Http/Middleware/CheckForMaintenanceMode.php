@@ -1,6 +1,6 @@
 <?php
 
-namespace WatchLater\Units\Core\Http\Middleware;
+namespace Ozana\Units\Core\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode as Middleware;
 

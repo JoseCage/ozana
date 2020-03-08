@@ -1,12 +1,12 @@
 <?php
 
-namespace WatchLater\Units\Core\Providers;
+namespace Ozana\Units\Core\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
-use WatchLater\Units\Authentication\Routes\Web;
-use WatchLater\Units\Authentication\Routes\Api;
+use Ozana\Units\Authentication\Routes\Web;
+use Ozana\Units\Authentication\Routes\Api;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'WatchLater\Units\Authentication\Http\Controllers';
+    protected $namespace = 'Ozana\Units\Authentication\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

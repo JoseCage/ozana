@@ -1,6 +1,6 @@
 <?php
 
-namespace WatchLater\Units;
+namespace Ozana\Units;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler;

@@ -1,6 +1,6 @@
 <?php
 
-namespace WatchLater\Support\Database;
+namespace Ozana\Support\Database;
 
 use Illuminate\Database\Eloquent\Factory;
 use Faker\Generator;

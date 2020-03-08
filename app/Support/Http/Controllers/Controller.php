@@ -1,6 +1,6 @@
 <?php
 
-namespace WatchLater\Support\Http\Controllers;
+namespace Ozana\Support\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

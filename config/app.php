@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Watch it Later'),
+    'name' => env('APP_NAME', 'Ozana'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://watchitlater.tv'),
+    'url' => env('APP_URL', 'https://ozanaapp.com'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -169,18 +169,18 @@ return [
          /**
          * Modules Service Providers...
          */
-         WatchLater\Modules\Users\Providers\UserServiceProvider::class,
-         WatchLater\Modules\WatchLists\Providers\WatchListServiceProvider::class,
-         WatchLater\Modules\Links\Providers\LinkServiceProvider::class,
+         Ozana\Modules\Users\Providers\UserServiceProvider::class,
+         Ozana\Modules\WatchLists\Providers\WatchListServiceProvider::class,
+         Ozana\Modules\Links\Providers\LinkServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
-        WatchLater\Units\Core\Providers\AppServiceProvider::class,
-        WatchLater\Units\Authentication\Providers\AuthServiceProvider::class,
-        // WatchLater\Providers\BroadcastServiceProvider::class,
-        WatchLater\Units\Core\Providers\EventServiceProvider::class,
-        WatchLater\Units\Core\Providers\RouteServiceProvider::class,
+        Ozana\Units\Core\Providers\AppServiceProvider::class,
+        Ozana\Units\Authentication\Providers\AuthServiceProvider::class,
+        // Ozana\Providers\BroadcastServiceProvider::class,
+        Ozana\Units\Core\Providers\EventServiceProvider::class,
+        Ozana\Units\Core\Providers\RouteServiceProvider::class,
 
     ],
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace WatchLater\Traits;
+namespace Ozana\Traits;
 
 use Ramsey\Uuid\Uuid;
 

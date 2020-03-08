@@ -45,7 +45,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => WatchLater\User::class,
+        'model' => Ozana\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
         'webhook' => [

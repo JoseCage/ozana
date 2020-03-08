@@ -1,13 +1,13 @@
 <?php
 
-namespace WatchLater\Support\Http\Controllers;
+namespace Ozana\Support\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use WatchLater\Support\Http\Controllers\Controller;
-use WatchLater\Modules\WatchLists\WatchList;
+use Ozana\Support\Http\Controllers\Controller;
+use Ozana\Modules\WatchLists\WatchList;
 use Illuminate\Support\Facades\Auth;
-use WatchLater\Units\Core\Http\Requests\AddWatchListRequest;
+use Ozana\Units\Core\Http\Requests\AddWatchListRequest;
 
 class WatchListController extends Controller
 {

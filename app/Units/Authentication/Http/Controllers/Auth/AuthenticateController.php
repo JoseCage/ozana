@@ -1,14 +1,14 @@
 <?php
 
-namespace WatchLater\Units\Authentication\Http\Controllers\Auth;
+namespace Ozana\Units\Authentication\Http\Controllers\Auth;
 
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
-use WatchLater\Support\Http\Controllers\Controller;
+use Ozana\Support\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
-use WatchLater\Mail\WelcomeUser;
+use Ozana\Mail\WelcomeUser;
 
 class AuthenticateController extends Controller
 {

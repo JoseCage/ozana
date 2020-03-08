@@ -1,6 +1,6 @@
 <?php
 
-namespace WatchLater\Units\Core\Providers;
+namespace Ozana\Units\Core\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

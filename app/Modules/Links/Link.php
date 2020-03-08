@@ -1,11 +1,11 @@
 <?php
 
-namespace WatchLater\Modules\Links;
+namespace Ozana\Modules\Links;
 
 use Illuminate\Database\Eloquent\Model;
 
-use WatchLater\Traits\UuidTrait as Uuids;
-use WatchLater\Modules\WatchLists\WatchList;
+use Ozana\Traits\UuidTrait as Uuids;
+use Ozana\Modules\WatchLists\WatchList;
 
 class Link extends Model
 {

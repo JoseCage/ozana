@@ -1,6 +1,6 @@
 <?php
 
-namespace WatchLater\Modules\WatchLists\Database\Migrations;
+namespace Ozana\Modules\WatchLists\Database\Migrations;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
