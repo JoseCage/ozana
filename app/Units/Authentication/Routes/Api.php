@@ -70,7 +70,7 @@ class Api extends Router
      */
     protected function userWatchListRoutes()
     {
-        $this->router->group(['prefix' => 'me/watchlists', 'middleware' => 'cors', 'namespace' => '\Ozana\Support\Http\Controllers\Api'], function($watchlist){
+        $this->router->group(['prefix' => 'me/watchlists', 'middleware' => ['cors', 'jwt.auth'], 'namespace' => '\Ozana\Support\Http\Controllers\Api'], function($watchlist){
             $watchlist->get('/', 'WatchListController@myList')->name('user.watchlists');
             $watchlist->get('/{watchlist}', 'WatchListController@watchList')->name('user.watchlists.find');
             $watchlist->post('/', 'WatchListController@addToList')->name('user.watchlists.add');
@@ -84,7 +84,7 @@ class Api extends Router
      */
     protected function publicWatchListRoutes()
     {
-        $this->router->group([/*'prefix' => 'links', 'middleware' => 'auth.jwt'*/ 'namespace' => '\Ozana\Support\Http\Controllers\Api'], function($watchlist){
+        $this->router->group([/*'prefix' => 'links',*/ 'middleware' => ['cors'], 'namespace' => '\Ozana\Support\Http\Controllers\Api'], function($watchlist){
             $watchlist->get('/watchlists', 'WatchListController@publicWatchLists')->name('watchlists');
             //$watchlist->get('/share/{link}', 'LinkController@redirectToList')->name('watchlists.redirect');
             $watchlist->get('/watchlists/{watchlist}', 'WatchListController@publicWatchList')->name('watchlists.find');
@@ -98,7 +98,7 @@ class Api extends Router
      */
     protected function userLinksRoutes()
     {
-        $this->router->group(['prefix' => 'me/links'/*, 'middleware' => 'auth.jwt'*/, 'namespace' => '\Ozana\Support\Http\Controllers\Api'], function($link){
+        $this->router->group(['prefix' => 'me/links', 'middleware' => ['cors', 'jwt.auth'], 'namespace' => '\Ozana\Support\Http\Controllers\Api'], function($link){
             $link->get('/', 'LinkController@index')->name('links');
             $link->post('/share/{watchlist}', 'LinkController@generateLink')->name('links.add');
         });

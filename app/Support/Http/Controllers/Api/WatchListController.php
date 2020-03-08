@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 use Ozana\Support\Http\Controllers\Controller;
 use Ozana\Modules\WatchLists\WatchList;
 use Illuminate\Support\Facades\Auth;
-use Tymon\JWTAuth\JWTAuth;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class WatchListController extends Controller
 {
     public function myList(Request $request)
     {
-        //$user = JWTAuth::parseToken()->authenticate();
+        $user = JWTAuth::parseToken()->authenticate();
 
         $list = WatchList::paginate($request->per_page);
 

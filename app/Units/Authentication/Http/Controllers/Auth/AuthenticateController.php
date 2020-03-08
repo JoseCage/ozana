@@ -98,11 +98,13 @@ class AuthenticateController extends Controller
 
         try {
             JWTAuth::invalidate($request->input('token'));
+
             return response()->json(
                 [
                 'success' => true
                 ]
             );
+            
         } catch (JWTException $e) {
             // Something went wrong whilst attemping to encode the token
             return response()->json([ 'success' => false, 'error' => 'Failed to logout, please try again.', 500 ]);
