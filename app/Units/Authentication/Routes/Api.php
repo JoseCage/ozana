@@ -21,13 +21,24 @@ class Api extends Router
     */
     protected function routes()
     {
-        //$this->authRoutes();
+        $this->authRoutes();
         $this->channelsRoutes();
         $this->userWatchListRoutes();
         $this->movieRoutes();
         $this->movieTypeRoutes();
         $this->userLinksRoutes();
         $this->publicWatchListRoutes();
+    }
+    
+    /**
+     * User Authentication routes
+     */
+    protected function authRoutes()
+    {
+        $this->router->group(['prefix' => 'auth', 'namespace' => 'Auth'], function($auth){
+            $auth->post('login', 'AuthenticateController@login')->name('login');
+            $auth->post('register', 'AuthenticateController@register')->name('register');
+        });
     }
 
     protected function channelsRoutes()

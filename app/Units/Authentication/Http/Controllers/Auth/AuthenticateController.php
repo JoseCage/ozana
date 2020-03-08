@@ -2,13 +2,14 @@
 
 namespace Ozana\Units\Authentication\Http\Controllers\Auth;
 
-use JWTAuth;
+use Tymon\JWTAuth\Facades\JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Ozana\Support\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 use Ozana\Mail\WelcomeUser;
+
 
 class AuthenticateController extends Controller
 {
