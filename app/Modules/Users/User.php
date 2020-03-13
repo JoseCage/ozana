@@ -13,8 +13,8 @@ use Ozana\Modules\WatchLists\WatchList;
 use Ozana\Modules\WatchLists\MovieWatchList;
 
 /**
-* User class
-*/
+ * User class
+ */
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable, UuidTrait;
@@ -43,13 +43,13 @@ class User extends Authenticatable implements JWTSubject
      * Disable auto-incrementing the primary key field for this model.
      *
      * @var bool $incrementing
-    */
+     */
     public $incrementing = false;
     /**
      * Override the primary key type.
      *
      * @var string keyType
-    */
+     */
     protected $keyType = 'string';
 
     /**

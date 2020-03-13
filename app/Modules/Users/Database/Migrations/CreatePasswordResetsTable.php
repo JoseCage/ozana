@@ -15,10 +15,10 @@ class CreatePasswordResetsTable extends Migration
     /**
      * Migration constructor.
      */
-     public function __construct()
-     {
-         $this->schema = app('db')->connection()->getSchemaBuilder();
-     }
+    public function __construct()
+    {
+        $this->schema = app('db')->connection()->getSchemaBuilder();
+    }
 
     /**
      * Run the migrations.
@@ -27,11 +27,13 @@ class CreatePasswordResetsTable extends Migration
      */
     public function up()
     {
-        $this->schema->create('password_resets', function (Blueprint $table) {
-            $table->string('email')->index();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
-        });
+        $this->schema->create(
+            'password_resets', function (Blueprint $table) {
+                $table->string('email')->index();
+                $table->string('token');
+                $table->timestamp('created_at')->nullable();
+            }
+        );
     }
 
     /**

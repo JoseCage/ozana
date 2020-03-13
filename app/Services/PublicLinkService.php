@@ -57,11 +57,13 @@ class PublicLinkService
                 ]
             );
 
-            return response()->json([
+            return response()->json(
+                [
                 'data' => [
                     $publiclink
                 ]
-            ]);
+                ]
+            );
         }
 
         return response()->json(

@@ -38,8 +38,10 @@ class UserServiceProvider extends ServiceProvider
 
     public function registerSeeders()
     {
-        $this->seeders([
+        $this->seeders(
+            [
             UsersTableSeeder::class
-        ]);
+            ]
+        );
     }
 }
