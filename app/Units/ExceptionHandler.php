@@ -4,6 +4,7 @@ namespace Ozana\Units;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler;
+use Throwable;
 
 class ExceptionHandler extends Handler
 {
@@ -32,7 +33,7 @@ class ExceptionHandler extends Handler
      * @param  \Exception  $exception
      * @return void
      */
-    public function report(Exception $exception)
+    public function report(Throwable $exception)
     {
         parent::report($exception);
     }
@@ -44,7 +45,7 @@ class ExceptionHandler extends Handler
      * @param  \Exception  $exception
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Exception $e)
+    public function render($request, Throwable $e)
     {
         if ($e instanceof Tymon\JWTAuth\Exceptions\TokenExpiredException) {
             return response()->json(['token_expired'], $e->getStatusCode());

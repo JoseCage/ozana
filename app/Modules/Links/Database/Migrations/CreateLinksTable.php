@@ -29,7 +29,7 @@ class CreateLinksTable extends Migration
     {
         $this->schema->create(
             'links', function (Blueprint $table) {
-                $table->bigInteger('uid')->autoIncrement();
+                $table->bigIncrements('uid')->autoIncrement();
                 $table->uuid('id')->unique();
                 $table->string('url')->unique();
                 $table->uuid('watchlist_id');

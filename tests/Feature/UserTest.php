@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -15,7 +16,13 @@ class UserTest extends TestCase
      */
     public function testGetUserProfile()
     {
-        $response = $this->get('/me');
+        $response = $this->withHeaders(
+            [
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . $this->token,
+             ]
+        )
+        ->get('/me');
 
         $response->assertStatus(404);
     }

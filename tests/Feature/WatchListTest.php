@@ -2,12 +2,14 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class WatchListTest extends TestCase
 {
+
     /**
      * A basic feature test example.
      *
@@ -15,7 +17,13 @@ class WatchListTest extends TestCase
      */
     public function testGetUserWatchLists()
     {
-        $response = $this->get('/api/me/watchlists');
+        $response = $this->withHeaders(
+            [
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . $this->token,
+             ]
+        )
+        ->get('/api/me/watchlists');
 
         $response->assertStatus(200)
             ->assertJsonStructure(
