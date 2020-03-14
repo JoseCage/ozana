@@ -37,10 +37,11 @@ class WatchListController extends Controller
 
     public function addToList(AddWatchListRequest $request)
     {
-        $user = Auth::user()->id;
+        $user = JWTAuth::parseToken()->authenticate();
+        // $user = Auth::user()->id;
 
         $watchlist = WatchList::create([
-            user_id => $user,
+            user_id => $user->id,
             $request->all()
         ]);
 
