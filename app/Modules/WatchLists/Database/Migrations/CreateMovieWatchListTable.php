@@ -29,7 +29,7 @@ class CreateMovieWatchListTable extends Migration
     {
         $this->schema->create(
             'movie_watch_list', function (Blueprint $table) {
-                $table->bigInteger('uid')->autoIncrement();
+                $table->bigIncrements('uid')->autoIncrement();
                 $table->uuid('id')->unique();
                 $table->dateTime('watch_date');
                 $table->uuid('movie_id');

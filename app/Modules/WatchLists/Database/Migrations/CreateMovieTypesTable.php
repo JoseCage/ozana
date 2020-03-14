@@ -29,7 +29,7 @@ class CreateMovieTypesTable extends Migration
     {
         $this->schema->create(
             'movie_types', function (Blueprint $table) {
-                $table->bigInteger('uid')->autoIncrement();
+                $table->bigIncrements('uid')->autoIncrement();
                 $table->uuid('id')->unique();
                 $table->string('name');
                 $table->string('display_name');

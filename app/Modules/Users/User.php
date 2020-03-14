@@ -8,7 +8,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 use Ozana\Traits\UuidTrait;
-use Ozana\Modules\Events\Event;
 use Ozana\Modules\WatchLists\WatchList;
 use Ozana\Modules\WatchLists\MovieWatchList;
 

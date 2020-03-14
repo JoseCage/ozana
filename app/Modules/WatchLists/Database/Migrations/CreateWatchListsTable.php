@@ -29,7 +29,7 @@ class CreateWatchListsTable extends Migration
     {
         $this->schema->create(
             'watchlists', function (Blueprint $table) {
-                $table->bigInteger('uid')->autoIncrement();
+                $table->bigIncrements('uid')->autoIncrement();
                 $table->uuid('id')->unique();
                 $table->string('name');
                 $table->text('description')->nullable();

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -15,7 +16,12 @@ class ChannelTest extends TestCase
      */
     public function testGetChannelLists()
     {
-        $response = $this->get('/api/channels');
+        $response = $this->withHeaders(
+            [
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . $this->token,
+             ]
+        )->get('/api/channels');
 
         $response->assertStatus(200)
             ->assertJsonStructure(

@@ -19,6 +19,7 @@ class HttpKernel extends Kernel
         \Ozana\Units\Core\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \Ozana\Units\Core\Http\Middleware\TrustProxies::class,
+        \Fruitcake\Cors\HandleCors::class,
     ];
 
     /**
@@ -62,7 +63,6 @@ class HttpKernel extends Kernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'jwt.auth' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class,
 	    'jwt.refresh' => \Tymon\JWTAuth\Http\Middleware\RefreshToken::class,
-        'cors'  => \Ozana\Units\Core\Http\Middleware\Cors::class,
     ];
 
     /**

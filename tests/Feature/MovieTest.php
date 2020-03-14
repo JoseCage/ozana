@@ -15,7 +15,13 @@ class MovieTest extends TestCase
      */
     public function testGetMovies()
     {
-        $response = $this->get('/api/movies');
+        $response = $this->withHeaders(
+            [
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . $this->token,
+             ]
+        )
+        ->get('/api/movies');
 
         $response->assertStatus(200)
             ->assertJsonStructure(

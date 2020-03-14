@@ -29,7 +29,7 @@ class CreateMoviesTable extends Migration
     {
         $this->schema->create(
             'movies', function (Blueprint $table) {
-                $table->bigInteger('uid')->autoIncrement();
+                $table->bigIncrements('uid')->autoIncrement();
                 $table->uuid('id')->unique();
                 $table->string('title');
                 $table->text('short_sinopse')->nullable();

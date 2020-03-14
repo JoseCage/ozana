@@ -2,12 +2,16 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+use Tymon\JWTAuth\Facades\JWTAuth;
+
 class LinkTest extends TestCase
 {
+
     /**
      * Get User sharing links.
      *
@@ -15,7 +19,14 @@ class LinkTest extends TestCase
      */
     public function testGetUserSharingLinks()
     {
-        $response = $this->get('/api/me/links');
+
+        $response = $this->withHeaders(
+            [
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . $this->token,
+             ]
+        )
+            ->get('/api/me/links');
 
         $response->assertStatus(200)
             ->assertJsonStructure(

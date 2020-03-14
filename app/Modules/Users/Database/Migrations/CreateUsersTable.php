@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
     {
         $this->schema->create(
             'users', function (Blueprint $table) {
-                $table->bigInteger('uid')->autoIncrement();
+                $table->bigIncrements('uid')->autoIncrement();
                 $table->uuid('id')->unique();
                 $table->string('name');
                 $table->string('email', 80)->unique();

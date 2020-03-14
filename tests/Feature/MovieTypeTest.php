@@ -15,7 +15,13 @@ class MovieTypeTest extends TestCase
      */
     public function testGetAListOfMovieTypes()
     {
-        $response = $this->get('/api/movietypes');
+        $response = $this->withHeaders(
+            [
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . $this->token,
+             ]
+        )
+        ->get('/api/movietypes');
 
         $response->assertStatus(200)
             ->assertJsonStructure(

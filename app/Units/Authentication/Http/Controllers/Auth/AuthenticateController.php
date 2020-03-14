@@ -2,6 +2,8 @@
 
 namespace Ozana\Units\Authentication\Http\Controllers\Auth;
 
+use Illuminate\Http\JsonResponse;
+use Illuminate\Validation\ValidationException;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Ozana\Support\Http\Controllers\Controller;
@@ -17,7 +19,7 @@ class AuthenticateController extends Controller
        * Authenticate the user
        *
        * @param  Request $request
-       * @return \Illuminate\Http\JsonResponse
+       * @return JsonResponse
        */
     public function login(Request $request)
     {
@@ -32,11 +34,18 @@ class AuthenticateController extends Controller
                 ]
             )
             ){
-                return response()->json([ 'error' => 'invalid_credentials' ], 401);
+                return response()->json(
+                    [
+                        'error' => 'invalid_credentials'
+                    ], 401);
             }
+
         } catch (JWTException $e) {
             // something went wrong whilst attempting to encode the token
-            return response()->json([ 'error' => 'could_not_create_token' ], 500);
+            return response()->json(
+                [
+                    'error' => 'could_not_create_token'
+                ], 500);
         }
 
         // all good so return the token
@@ -52,7 +61,7 @@ class AuthenticateController extends Controller
      * Register a new User
      *
      * @param  RegisterUserRequest $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function register(RegisterUserRequest $request)
     {
@@ -89,8 +98,9 @@ class AuthenticateController extends Controller
     /**
      * Invalidate and log out the user
      *
-     * @param  Request $request
-     * @return \Illuminate\Http\JsonResponse
+     * @param Request $request
+     * @return JsonResponse
+     * @throws ValidationException
      */
     public function logout(Request $request)
     {
@@ -104,7 +114,7 @@ class AuthenticateController extends Controller
                 'success' => true
                 ]
             );
-            
+
         } catch (JWTException $e) {
             // Something went wrong whilst attemping to encode the token
             return response()->json([ 'success' => false, 'error' => 'Failed to logout, please try again.', 500 ]);
