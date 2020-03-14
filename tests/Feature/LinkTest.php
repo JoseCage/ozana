@@ -7,7 +7,6 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-use Tymon\JWTAuth\Facades\JWTAuth;
 
 class LinkTest extends TestCase
 {
@@ -23,7 +22,7 @@ class LinkTest extends TestCase
         $response = $this->withHeaders(
             [
                 'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer ' . $this->token,
+                'Authorization' => 'Bearer ' .$this->token,
              ]
         )
             ->get('/api/me/links');
