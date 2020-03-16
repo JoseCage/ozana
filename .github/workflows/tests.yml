@@ -25,10 +25,10 @@ jobs:
           cp .env.example .env
           php artisan key:generate
 
-      - name: Create the sqlite database
-        run: |
-          touch database/database.sqlite
-          php artisan migrate --env=testing --no-interaction
+      - name: Migrate database tables
+        run: php artisan migrate --env=testing --no-interaction
+        env:
+          DB_CONNECTION: sqlite
 
       - name: Run the tests
         run: php artisan test
