@@ -41,7 +41,6 @@
             "Ozana\\": "app/"
         },
         "classmap": [
-            "database/seeds"
         ]
     },
     "autoload-dev": {
