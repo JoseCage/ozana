@@ -26,7 +26,9 @@ jobs:
           php artisan key:generate
 
       - name: Migrate database tables
-        run: php artisan migrate --env=testing --no-interaction
+        run: |
+          touch database/database.sqlite
+          php artisan migrate --env=testing --no-interaction
         env:
           DB_CONNECTION: sqlite
 
