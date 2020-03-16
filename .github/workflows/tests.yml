@@ -26,13 +26,24 @@ jobs:
           php artisan key:generate
 
       - name: Migrate database tables
-        run: |
-          touch database/database.sqlite
-          php artisan migrate --env=testing --no-interaction
+        run: php artisan migrate --env=testing --no-interaction
         env:
-          DB_CONNECTION: sqlite
+          DB_CONNECTION: mysql
 
       - name: Run the tests
         run: php artisan test
         env:
           APP_ENV: testing
+          DB_CONNECTION: mysql
+          DB_NAME: ozana_test
+          DB_PASSWORD:
+          DB_USER: root
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: ozana_test
+        ports:
+          - 3306
+          options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
