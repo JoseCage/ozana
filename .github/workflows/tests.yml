@@ -28,6 +28,7 @@ jobs:
       - name: Migrate database tables
         run: php artisan migrate --env=testing --no-interaction
         env:
+          APP_ENV: testing
           DB_CONNECTION: mysql
           DH_HOST: 127.0.0.1
           DB_NAME: ozana_test
