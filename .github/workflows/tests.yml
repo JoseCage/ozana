@@ -1,4 +1,4 @@
-name: PHPUnit Tests
+name: Tests
 
 on: [push]
 
@@ -9,16 +9,16 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Ccche Composer dependencies
-        uses: actions/cache@v1
-        with:
-          path: vendor
-          key: composer-${{ hashFiles('composer.lock') }}
-
       - name: Install Composer dependencies
         run: composer install -n --prefer-dist
         env:
           APP_ENV: testing
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v1
+        with:
+          path: vendor
+          key: composer-${{ hashFiles('composer.lock') }}
 
       - name: Prepare the Laravel project
         run: |
@@ -29,10 +29,3 @@ jobs:
         run: php artisan test
         env:
           APP_ENV: testing
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@master
-        if: failure()
-        with:
-          name: Logs
-          path: ./storage/logs
