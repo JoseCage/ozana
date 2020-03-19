@@ -32,6 +32,8 @@ jobs:
 
       - name: Run the (Unit and Feature) tests
         run: php artisan test --without-tty
+        env:
+          DB_CONNECTION: sqlite
 
     services:
       mysql:
