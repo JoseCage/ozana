@@ -11,8 +11,8 @@ jobs:
 
       - name: Install Composer dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-        env:
-          APP_ENV: testing
+        # env:
+        #   APP_ENV: testing
 
       - name: Cache Composer dependencies
         uses: actions/cache@v1
@@ -30,16 +30,16 @@ jobs:
         run: |
           mkdir -p database
           touch database/database.sqlite
-          php artisan migrate --env=testing --no-interaction
-        env:
-          APP_ENV: testing
-          DB_CONNECTION: sqlite
+          php artisan migrate
+        # env:
+        #   APP_ENV: testing
+        #   DB_CONNECTION: sqlite
 
       - name: Run the (Unit and Feature) tests
-        run: ./vendor/bin/phpunit --testdox
-        env:
-          APP_ENV: testing
-          DB_CONNECTION: sqlite
+        run: php artisan test --without-tty
+        # env:
+        #   APP_ENV: testing
+        #   DB_CONNECTION: sqlite
 
     services:
       mysql:
