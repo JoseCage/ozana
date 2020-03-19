@@ -24,16 +24,12 @@ jobs:
           php artisan key:generate --no-interaction --force
           php artisan jwt:secret --no-interaction --force
 
-      - name: Create database and migrate schemas
+      - name: Migrate schemas and run tests
         run: |
           mkdir -p database
           touch database/database.sqlite
           php artisan migrator --no-interaction --force
-
-      - name: Run the (Unit and Feature) tests
-        run: php artisan test --without-tty
-        env:
-          DB_CONNECTION: sqlite
+          php artisan test --without-tty
 
     services:
       mysql:
