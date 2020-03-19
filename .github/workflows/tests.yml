@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdir -p database
           touch database/database.sqlite
-          php artisan migrator
+          php artisan migrator --no-interaction --force
 
       - name: Run the (Unit and Feature) tests
         run: php artisan test --without-tty
