@@ -27,7 +27,7 @@ jobs:
           php artisan jwt:secret --no-interaction --force
 
       - name: Migrate database tables
-        run: php artisan migrate --env=testing --database=testing --no-interaction
+        run: php artisan migrate --no-interaction
         env:
           APP_ENV: testing
           DB_CONNECTION: sqlite
