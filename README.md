@@ -9,12 +9,9 @@ A easy way to remind wich movies and series you want to watch and when
 ### What?
 Ozana is a mobile (and web) app that help the user to save a movie/serie he wants to watch later. Or when it is released.
 
+### API?
 
-### How?
-
-
-### Why?
-
+Check the API endpoints and parameters in [API](API.md)
 
 # Instalation
 
