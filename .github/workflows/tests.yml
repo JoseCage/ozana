@@ -30,13 +30,13 @@ jobs:
         run: |
           mkdir -p database
           touch database/database.sqlite
-          php artisan migrate --no-interaction
+          php artisan migrate --env=testing --no-interaction
         env:
           APP_ENV: testing
           DB_CONNECTION: sqlite
 
       - name: Run the (Unit and Feature) tests
-        run: php artisan test
+        run: ./vendor/bin/phpunit --testdox
         env:
           APP_ENV: testing
           DB_CONNECTION: sqlite
