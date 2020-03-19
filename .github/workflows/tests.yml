@@ -22,7 +22,7 @@ jobs:
 
       - name: Copy dotenv file and generate app key
         run: |
-          cp .env.example .envphp -r "file_exists('.env') || copy('.env.example', '.env');"
+          php -r "file_exists('.env') || copy('.env.example', '.env');"
           php artisan key:generate --no-interaction --force
           php artisan jwt:secret --no-interaction --force
 
