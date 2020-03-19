@@ -26,24 +26,20 @@ jobs:
           php artisan key:generate
 
       - name: Migrate database tables
-        run: php artisan migrate --env=testing --no-interaction
+        run: |
+          cp
+          php artisan migrate --env=testing --no-interaction
         env:
           APP_ENV: testing
-          DB_CONNECTION: mysql
-          DH_HOST: 127.0.0.1
-          DB_NAME: ozana_test
-          DB_PASSWORD:
-          DB_USER: root
+          DB_CONNECTION: sqlite
+          DB_DATABASE: `:memory:`
 
       - name: Run the tests
         run: php artisan test
         env:
           APP_ENV: testing
-          DB_CONNECTION: mysql
-          DH_HOST: 127.0.0.1
-          DB_NAME: ozana_test
-          DB_PASSWORD:
-          DB_USER: root
+          DB_CONNECTION: sqlite
+          DB_DATABASE: `:memory:`
 
     services:
       mysql:
