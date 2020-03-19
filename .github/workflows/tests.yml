@@ -33,7 +33,6 @@ jobs:
         env:
           APP_ENV: testing
           DB_CONNECTION: sqlite
-          DB_DATABASE: `:memory:`
 
       - name: Run the tests
         run: php artisan test
