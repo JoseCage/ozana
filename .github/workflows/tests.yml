@@ -23,8 +23,8 @@ jobs:
       - name: Prepare the Laravel project
         run: |
           cp .env.example .env
-          php artisan key:generate
-          php artisan jwt:secret
+          php artisan key:generate --no-interaction --force
+          php artisan jwt:secret --no-interaction --force
 
       - name: Migrate database tables
         run: |
