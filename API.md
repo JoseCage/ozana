@@ -1,5 +1,4 @@
-# 
-Ozana API
+# Ozana API
 
 ### Routes
 
