@@ -3,11 +3,11 @@
 namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-
 use Ozana\Modules\Users\User;
 
 abstract class TestCase extends BaseTestCase
 {
+
     use CreatesApplication;
 
     protected $token;
