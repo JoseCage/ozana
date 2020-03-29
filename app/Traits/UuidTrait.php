@@ -14,8 +14,8 @@ trait UuidTrait
     {
         parent::boot();
 
-        static::creating(function($model){
-            $model->{$model->getKeyName()} = Uuid::uuid4()->toString();
-        });
+        static::creating(
+          fn($model) => $model->{$model->getKeyName()} = Uuid::uuid4()->toString()
+        );
     }
 }

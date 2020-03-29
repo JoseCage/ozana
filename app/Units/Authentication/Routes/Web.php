@@ -22,7 +22,7 @@ class Web extends Router
     protected function routes()
     {
         $this->homeRoutes();
-        $this->authRoutes();
+        //$this->authRoutes();
         $this->userWatchListRoutes();
         $this->userMovieListRoutes();
     }
@@ -32,7 +32,11 @@ class Web extends Router
         $this->router->get('me', '\Ozana\Support\Http\Controllers\HomeController@homeAdmin')->name('admin');
 
         $this->router->get('/', function () {
-            return view('welcome');
+            return view('index');
+        });
+
+        $this->router->get('/movie', function () {
+            return view('movie');
         });
 
         /*$this->router->get('/render', function(){
